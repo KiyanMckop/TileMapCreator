@@ -18,8 +18,11 @@ public class LayersManger {
 
     }
 
-    public Canvas addLayer(int width, int height){
-        return new Canvas(width, height);
+    public Canvas addLayer(StackPane parent){
+        Canvas canvas = new Canvas();
+        canvas.setWidth(parent.getWidth());
+        canvas.setHeight(parent.getHeight());
+        return canvas;
     }
 
     public List<Node> getAllLayer(StackPane parent){
@@ -53,7 +56,7 @@ public class LayersManger {
         hBox.setPrefWidth(layerList.getPrefWidth());
 
         TextField layerLabel = new TextField();
-        layerLabel.setText("Layer: " + numItems);
+        layerLabel.setText("Layer: " + numItems + 1);
         layerLabel.setStyle(null);
 
         CheckBox chLayerVisibility = new CheckBox();

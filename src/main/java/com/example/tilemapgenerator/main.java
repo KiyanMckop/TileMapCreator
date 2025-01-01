@@ -459,22 +459,9 @@ public class main implements Initializable {
 
     public void btnAddLayer(ActionEvent actionEvent) {
 
-        this.canMain = layersManger.addLayer((int)stackLayers.getPrefWidth(), (int)stackLayers.getPrefHeight());
+        this.canMain = layersManger.addLayer(stackLayers);
 
         stackLayers.getChildren().add(canMain);
-
-//        canMain.setOnMouseClicked(event ->{
-//            Tile tile = new Tile();
-//            tile.x = (int)event.getX()/ tm.tileSize;
-//            tile.y = (int)event.getY()/ tm.tileSize;
-//
-//            clearGirdTile(canMain, tile);
-//            int imageIndex = getNeighbours(tile);
-//            populateIndex(imageIndex, tile);
-//            paintImage(this.allImagesFlattened[imageIndex], tile, canMain);
-//            updateNeighbours(tile);
-//
-//        });
 
         layersManger.addLayerListItem(lvLayers, stackLayers);
 

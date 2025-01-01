@@ -2,129 +2,164 @@
 .root {
     -fx-font-family: "Arial";
     -fx-font-size: 14px;
-    -fx-base: #EEEEEE; /* Light Gray Background */
+    -fx-font-weight: normal;
+    -fx-base: #222831;
+    -fx-text-fill: #EEEEEE;
 }
 
-/* Background of the entire scene */
-.root, .scene {
-    -fx-background-color: #222831; /* Dark background for the scene */
+.text{
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #EEEEEE;
 }
 
-/* Text Styling */
-.text {
-    -fx-text-fill: #EEEEEE; /* Light Gray text */
-    -fx-font-size: 16px;
-    -fx-font-weight: normal; /* More subtle weight for text */
+.text{
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #EEEEEE;
 }
 
-/* Buttons */
 .button {
-    -fx-background-color: #00ADB5; /* Teal button */
-    -fx-text-fill: #EEEEEE; /* Light Gray text */
+    -fx-background-color: #454b54;
     -fx-font-size: 14px;
     -fx-border-radius: 5px;
     -fx-padding: 8 16;
-    -fx-effect: innershadow(gaussian, #000000, 5, 0.0, 1, 1);
+    -fx-effect: dropshadow(gaussian, #2d3238, 10, 0.05, 1, 1);
 }
 
 .button:hover {
-    -fx-background-color: #00A3A0; /* Slightly darker teal on hover */
-    -fx-effect: innershadow(gaussian, #000000, 5, 0.1, 1, 1);
+    -fx-border-color: #00ADB5;
+    -fx-effect: dropshadow(gaussian, #2d3238, 10, 0.05, 1, 1);
 }
 
-/* Slider */
+
 .slider {
-    -fx-base: #393E46; /* Dark Gray background for slider */
-    -fx-background-color: #393E46;
-    -fx-accent: #00ADB5; /* Teal accent color for slider bar */
+    -fx-base: #393E46;
+    -fx-accent: #213555;
 }
 
 .slider .track {
-    -fx-background-color: #3C434F; /* Slightly lighter dark gray for track */
+    -fx-background-color: #5c6470;
 }
 
 .slider .thumb {
-    -fx-background-color: #00A3A0; /* Slightly muted teal for thumb */
+    -fx-background-color: #818a98;
+
 }
 
-/* CheckBox */
+.slider .thumb:hover {
+    -fx-background-color: #BCCCDC;
+    -fx-border-color: #00ADB5;
+    -fx-border-radius: 100px
+}
+
 .check-box {
-    -fx-text-fill: #EEEEEE; /* Light Gray text */
+    -fx-border-color: #00ADB5;
+    -fx-border-radius: 5px;
+    -fx-background-color: #9AA6B2;
+    -fx-background-radius: 5px;
+}
+
+.check-box:hover{
+    -fx-background-color: #00ADB5;
+
 }
 
 .check-box:selected {
-    -fx-text-fill: #00ADB5; /* Soft teal text when selected */
+    -fx-text-fill: #9AA6B2;
 }
 
-/* ListView */
+
+
 .list-view {
-    -fx-background-color: #393E46; /* Muted dark gray for ListView */
-    -fx-text-fill: #EEEEEE; /* Light Gray text */
-    -fx-border-color: #3C434F; /* Slightly muted teal border */
+    -fx-background-color: #5c6470;
+    -fx-border-color: #3C434F;
     -fx-border-width: 1px;
     -fx-padding: 10px;
 }
 
 .list-view .cell {
-    -fx-background-color: #393E46; /* Soft dark gray for list items */
-    -fx-text-fill: #EEEEEE; /* Light Gray text */
+    -fx-background-color: #393E46;
+    -fx-border-radius: 5px;
+    -fx-padding: 8 16;
 }
 
 .list-view .cell:filled:selected {
-    -fx-background-color: #00A3A0; /* Soft muted teal selection */
+    -fx-border-color: #00ADB5;
 }
 
-/* TabPane and Tabs */
+/*
 .tab-pane {
-    -fx-background-color: #222831; /* Dark background for TabPane */
-    -fx-border-color: #00ADB5; /* Soft teal border around TabPane */
+    -fx-border-color: #7a7a7a;
+    -fx-border-radius: 5px;
+    -fx-background-color: #D9EAFD;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, #7a7a7a, 10, 0.05, 2, 2);
 }
 
 .tab {
-    -fx-background-color: #393E46; /* Muted gray for tabs */
-    -fx-text-fill: #EEEEEE; /* Light Gray text on tabs */
+    -fx-background-color: #D9EAFD;
+    -fx-text-fill: #EEEEEE;
 }
 
 .tab:selected {
-    -fx-background-color: #00A3A0; /* Subtle muted teal for selected tab */
-    -fx-text-fill: #222831; /* Dark text for selected tab */
+    -fx-background-color: #9AA6B2;
+    -fx-text-fill: black;
 }
 
-/* HBox and VBox */
-.hbox, .vbox {
-    -fx-spacing: 10px;
-    -fx-padding: 10px;
+*/
+
+#leftPane {
+    -fx-background-color: #2d3238;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #2d3238, 10, 0.05, 1, 1);
 }
 
-.hbox {
-    -fx-background-color: #222831; /* Dark background for HBox */
-    -fx-border-color: #3C434F; /* Soft teal border */
-    -fx-border-width: 1px;
+#rightPane {
+    -fx-background-color: #2d3238;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #2d3238, 10, 0.05, 1, 1);
 }
 
-.vbox {
-    -fx-background-color: #222831; /* Dark background for VBox */
-    -fx-border-color: #3C434F; /* Soft teal border */
-    -fx-border-width: 1px;
+#centerPane{
+    -fx-background-color: #2d3238;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #2d3238, 10, 0.05, 1, 0, 0.1);
 }
 
-.vbox .text {
-    -fx-text-fill: #EEEEEE; /* Light Gray text */
-    -fx-font-size: 16px;
+#topPane {
+    -fx-background-color: #2d3238;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, #2d3238, 10, 0.05, 1, 0, 0.1);
 }
 
-/* Canvas */
+
 .canvas {
-    -fx-background-color: #393E46; /* Soft dark gray for Canvas */
-    -fx-border-color: #00A3A0; /* Soft muted teal border */
+    -fx-background-color: #EEE;
+    -fx-border-color: #BCCCDC;
     -fx-border-width: 2px;
+    -fx-border-radius: 5px;
 }
 
-/* StackPane */
-.stack-pane {
-    -fx-border-color: #00ADB5; /* Soft teal border for StackPane */
-    -fx-border-width: 1px;
+
+.canvas:hover {
+    -fx-background-color: #D9EAFD;
 }
+
+
+.canvas:focused {
+    -fx-background-color: #BCCCDC;
+    -fx-border-color: #9AA6B2;
+}
+
+.image-view{
+    -fx-border-color: black;
+}
+
+
 
 /* Padding and Insets */
 .padding {
@@ -133,9 +168,4 @@
 
 .insets {
     -fx-margin: 10px;
-}
-
-/* Drop Shadow for container elements */
-.container {
-    -fx-effect: dropshadow(gaussian, #000000, 10, 0.1, 0, 0);
 }

@@ -30,7 +30,7 @@ public class ExportMap {
                 for (int[][] map : this.allMaps) {
                     for (int i = 0; i < map.length; i++) {
                         for (int j = 0; j < map[i].length; j++) {
-                            fileWriter.write(map[i][j] - 1 + " ");
+                            fileWriter.write(map[j][i] - 1 + " ");
                         }
                         fileWriter.write("\n");
                     }
@@ -49,7 +49,7 @@ public class ExportMap {
 
     }
 
-    public void exportSeparateTextFile() throws IOException {
+    public void exportSeparateTextFile() {
 
         int index = 0;
 
@@ -66,7 +66,6 @@ public class ExportMap {
                     FileWriter myWriter = new FileWriter(filePath);
                     for (int i = 0; i < map.length; i++) {
                         for (int j = 0; j < map[i].length; j++) {
-                            System.out.println(map[i][j]);
                             myWriter.write((map[j][i] - 1) + " ");
                         }
                         myWriter.write("\n");

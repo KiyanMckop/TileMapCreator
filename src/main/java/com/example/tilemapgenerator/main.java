@@ -123,7 +123,7 @@ public class main implements Initializable {
                 populateIndex(imageIndex + 1, tile);
 
                 paintImage(this.allImagesFlattened[imageIndex], tile, canMain);
-                updateNeighbours(tile);
+                updateEightBitNeighbours(tile);
 
             });
 
@@ -135,11 +135,11 @@ public class main implements Initializable {
                 tile.y = (int)event.getY()/ tm.tileSize;
                 clearGirdTile(canMain, tile);
 
-                int imageIndex = getNeighbours(tile);
+                int imageIndex = getEightDirectionBinary(tile);
                 populateIndex(imageIndex + 1, tile);
                 paintImage(this.allImagesFlattened[imageIndex], tile, canMain);
 
-                updateNeighbours(tile);
+                updateEightBitNeighbours(tile);
             });
 
 
@@ -193,24 +193,18 @@ public class main implements Initializable {
         }
 
         if (IndexMaps.get(indexMapNum)[tile.x + 1][tile.y - 1]  -1 > -1){
-            if (north == 1 && east == 1) {
-                northEast = 1;
-            }
+            northEast = (byte) ((north == 1 && east == 1) ? 1 : 0);
+
         }
         if (IndexMaps.get(indexMapNum)[tile.x - 1][tile.y - 1]  -1 > -1){
-            if (north == 1 && west == 1) {
-                northWest = 1;
-            }
+            northWest = (byte) ((north == 1 && west == 1) ? 1 : 0);
+
         }
         if (IndexMaps.get(indexMapNum)[tile.x + 1][tile.y + 1]  -1 > -1){
-            if (east == 1 && south == 1) {
-                southEast = 1;
-            }
+            southEast = (byte) ((south == 1 && east == 1) ? 1 : 0);
         }
         if (IndexMaps.get(indexMapNum)[tile.x - 1][tile.y + 1]  -1 > -1){
-            if (south == 1 && west == 1) {
-                southWest = 1;
-            }
+            southWest = (byte) ((south == 1 && west == 1) ? 1 : 0);
         }
 
         return autoTiler.getEightBitDirectional(north, northEast, northWest, south,
@@ -219,7 +213,7 @@ public class main implements Initializable {
     }
 
 
-    public void updateNeighbours(Tile tile){
+    public void updateFourBitNeighbours(Tile tile){
         List<Tile> surroundingTiles = getGridAreaRange(tile.x,
                 tile.y,
                 (int)canTileMapImport.getWidth(),
@@ -232,6 +226,25 @@ public class main implements Initializable {
         for (Tile cell: surroundingTiles){
             if (IndexMaps.get(indexMapNum)[cell.x][cell.y] - 1> -1) {
                 int imageIndex = getNeighbours(cell);
+                populateIndex(imageIndex + 1, cell);
+                paintImage(this.allImagesFlattened[imageIndex], cell, canMain);
+            }
+        }
+    }
+
+    public void updateEightBitNeighbours(Tile tile){
+        List<Tile> surroundingTiles = getGridAreaRange(tile.x,
+                tile.y,
+                (int)canTileMapImport.getWidth(),
+                (int)canTileMapImport.getHeight(),
+                1);
+
+        Canvas canvas = layersManger.getSelectedCanvas(stackLayers, lvLayers);
+        int indexMapNum = stackLayers.getChildren().indexOf(canvas);
+
+        for (Tile cell: surroundingTiles){
+            if (IndexMaps.get(indexMapNum)[cell.x][cell.y] - 1> -1) {
+                int imageIndex = getEightDirectionBinary(cell);
                 populateIndex(imageIndex + 1, cell);
                 paintImage(this.allImagesFlattened[imageIndex], cell, canMain);
             }

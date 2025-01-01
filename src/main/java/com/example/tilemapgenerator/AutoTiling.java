@@ -17,7 +17,7 @@ public class AutoTiling {
     public int WEST;
     public int EAST;
 
-    private HashMap<int, int> correspondingValues = new HashMap<int, int>();
+    private HashMap<Integer, Integer> correspondingValues = new HashMap<>();
 
 
     public AutoTiling(){
@@ -33,6 +33,8 @@ public class AutoTiling {
                 correspondingValues.put(key, 47);
             }
         }
+
+        System.out.println(correspondingValues);
 
     }
 
@@ -64,14 +66,17 @@ public class AutoTiling {
         EAST = (int) Math.pow(2, 4);
 
         SOUTH_WEST = (int) Math.pow(2, 5);
-        SOUTH_EAST = (int) Math.pow(2, 6);
-        SOUTH = (int) Math.pow(2, 7);
+        SOUTH = (int) Math.pow(2, 6);
+        SOUTH_EAST = (int) Math.pow(2, 7);
+
 
         int bitmask = NORTH_WEST*hasNorthWest + NORTH*hasNorth + NORTH_EAST*hasNorthEast
-                + WEST*hasWest + EAST*hasEast + SOUTH_EAST+hasSouthEast
+                + WEST*hasWest + EAST*hasEast + SOUTH_EAST*hasSouthEast
                 + SOUTH*hasSouth + SOUTH_WEST*hasSouthWest;
 
+
         return correspondingValues.get(bitmask);
+
     }
 
 

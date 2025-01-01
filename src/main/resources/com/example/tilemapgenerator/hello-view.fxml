@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="500" maxWidth="800" prefHeight="500.0" prefWidth="800.0" spacing="10.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tilemapgenerator.HelloController">
+    <HBox alignment="CENTER" prefHeight="500.0" prefWidth="800.0" spacing="10.0">
+       <padding>
+          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+       </padding>
+       <children>
+          <VBox alignment="CENTER_LEFT" prefHeight="460.0" prefWidth="400.0" spacing="10.0" style="-fx-border-color: black;">
+             <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+             </padding>
+             <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Map Size" />
+                <GridPane alignment="CENTER" prefHeight="250.0" prefWidth="340.0" style="-fx-border-color: black; -fx-background-color: light-grey;">
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                   <children>
+                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Width" />
+                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Height" GridPane.rowIndex="1" />
+                      <Text fx:id="tvMapSizePixels" strokeType="OUTSIDE" strokeWidth="0.0" text="Num Pixels" GridPane.rowIndex="2" />
+                      <Spinner fx:id="spMapSizeWidth" editable="true" GridPane.columnIndex="1" />
+                      <Spinner fx:id="spMapSizeHeight" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                   </children>
+                   <padding>
+                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                   </padding>
+                </GridPane>
+             </children>
+          </VBox>
+          <VBox alignment="CENTER_LEFT" prefHeight="460.0" prefWidth="400.0" spacing="10.0" style="-fx-border-color: black;">
+             <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+             </padding>
+             <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tile Size" />
+                <GridPane alignment="CENTER" prefHeight="250.0" prefWidth="340.0" style="-fx-border-color: black;">
+                   <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   </columnConstraints>
+                   <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   </rowConstraints>
+                   <children>
+                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Width" />
+                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Height" GridPane.rowIndex="1" />
+                      <Spinner fx:id="spTileSizeWidth" GridPane.columnIndex="1" />
+                      <Spinner fx:id="spTileSizeHeight" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                   </children>
+                   <padding>
+                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                   </padding>
+                </GridPane>
+             </children>
+          </VBox>
+       </children>
+    </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <children>
+         <Button fx:id="btnRestSetup" mnemonicParsing="false" onAction="#resetMapInfo" text="Reset" />
+         <Button fx:id="btnSaveSetup" mnemonicParsing="false" onAction="#switchScene" text="Save" />
+      </children>
+   </HBox>
+</VBox>

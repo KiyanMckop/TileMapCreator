@@ -1,0 +1,141 @@
+/* General Style */
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-base: #EEEEEE; /* Light Gray Background */
+}
+
+/* Background of the entire scene */
+.root, .scene {
+    -fx-background-color: #222831; /* Dark background for the scene */
+}
+
+/* Text Styling */
+.text {
+    -fx-text-fill: #EEEEEE; /* Light Gray text */
+    -fx-font-size: 16px;
+    -fx-font-weight: normal; /* More subtle weight for text */
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #00ADB5; /* Teal button */
+    -fx-text-fill: #EEEEEE; /* Light Gray text */
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-padding: 8 16;
+    -fx-effect: innershadow(gaussian, #000000, 5, 0.0, 1, 1);
+}
+
+.button:hover {
+    -fx-background-color: #00A3A0; /* Slightly darker teal on hover */
+    -fx-effect: innershadow(gaussian, #000000, 5, 0.1, 1, 1);
+}
+
+/* Slider */
+.slider {
+    -fx-base: #393E46; /* Dark Gray background for slider */
+    -fx-background-color: #393E46;
+    -fx-accent: #00ADB5; /* Teal accent color for slider bar */
+}
+
+.slider .track {
+    -fx-background-color: #3C434F; /* Slightly lighter dark gray for track */
+}
+
+.slider .thumb {
+    -fx-background-color: #00A3A0; /* Slightly muted teal for thumb */
+}
+
+/* CheckBox */
+.check-box {
+    -fx-text-fill: #EEEEEE; /* Light Gray text */
+}
+
+.check-box:selected {
+    -fx-text-fill: #00ADB5; /* Soft teal text when selected */
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: #393E46; /* Muted dark gray for ListView */
+    -fx-text-fill: #EEEEEE; /* Light Gray text */
+    -fx-border-color: #3C434F; /* Slightly muted teal border */
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+}
+
+.list-view .cell {
+    -fx-background-color: #393E46; /* Soft dark gray for list items */
+    -fx-text-fill: #EEEEEE; /* Light Gray text */
+}
+
+.list-view .cell:filled:selected {
+    -fx-background-color: #00A3A0; /* Soft muted teal selection */
+}
+
+/* TabPane and Tabs */
+.tab-pane {
+    -fx-background-color: #222831; /* Dark background for TabPane */
+    -fx-border-color: #00ADB5; /* Soft teal border around TabPane */
+}
+
+.tab {
+    -fx-background-color: #393E46; /* Muted gray for tabs */
+    -fx-text-fill: #EEEEEE; /* Light Gray text on tabs */
+}
+
+.tab:selected {
+    -fx-background-color: #00A3A0; /* Subtle muted teal for selected tab */
+    -fx-text-fill: #222831; /* Dark text for selected tab */
+}
+
+/* HBox and VBox */
+.hbox, .vbox {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+.hbox {
+    -fx-background-color: #222831; /* Dark background for HBox */
+    -fx-border-color: #3C434F; /* Soft teal border */
+    -fx-border-width: 1px;
+}
+
+.vbox {
+    -fx-background-color: #222831; /* Dark background for VBox */
+    -fx-border-color: #3C434F; /* Soft teal border */
+    -fx-border-width: 1px;
+}
+
+.vbox .text {
+    -fx-text-fill: #EEEEEE; /* Light Gray text */
+    -fx-font-size: 16px;
+}
+
+/* Canvas */
+.canvas {
+    -fx-background-color: #393E46; /* Soft dark gray for Canvas */
+    -fx-border-color: #00A3A0; /* Soft muted teal border */
+    -fx-border-width: 2px;
+}
+
+/* StackPane */
+.stack-pane {
+    -fx-border-color: #00ADB5; /* Soft teal border for StackPane */
+    -fx-border-width: 1px;
+}
+
+/* Padding and Insets */
+.padding {
+    -fx-padding: 10px;
+}
+
+.insets {
+    -fx-margin: 10px;
+}
+
+/* Drop Shadow for container elements */
+.container {
+    -fx-effect: dropshadow(gaussian, #000000, 10, 0.1, 0, 0);
+}
